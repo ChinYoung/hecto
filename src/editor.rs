@@ -1,8 +1,10 @@
 use crate::Document;
 use crate::Terminal;
+use crate::Row;
 use termion::event::Key;
 
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+
 #[derive(Default)]
 pub struct Position {
     pub x: usize,
@@ -102,6 +104,9 @@ impl Editor {
         welcome_message = format!("~{}{}", spaces, welcome_message);
         welcome_message.truncate(width);
         println!("{}\r", welcome_message);
+    }
+    pub fn draw_row(&self, row: &Row) {
+
     }
     fn draw_rows(&self) {
         let height = self.terminal.size().height - 1;

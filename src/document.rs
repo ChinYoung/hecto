@@ -10,4 +10,7 @@ impl Document {
         rows.push(Row::from("Hello hecto"));
         Self { rows }
     }
+    pub fn row(&self,index: usize)-> Option<&Row> {
+        self.rows.get(index)
+    }
 }
